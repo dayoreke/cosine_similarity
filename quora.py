@@ -65,10 +65,13 @@ def main():
 
     total_questions = " ".join(question_1 + question_2)
     total_questions = total_questions.replace("?", "")
+    total_questions = total_questions.lower()
 
     vocab_index = create_vocab(total_questions)
     for i in range(len(question_1)):
         question_1[i] = question_1[i].replace("?", "")
+        question_1[i] = question_1[i].lower()
         question_2[i] = question_2[i].replace("?", "")
+        question_2[i] = question_2[i].lower()
         result = compare_questions(question_1[i], question_2[i], answer[i], vocab_index)
 main()
